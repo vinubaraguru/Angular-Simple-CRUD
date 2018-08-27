@@ -1,8 +1,4 @@
-<br>
-<br>
-<br>
-<br>
-<div class="row">
+<div class="row" style="padding-top:100px;">
   <div class="col-md-6">
     <div *ngIf="person" class="card" style="padding:20px;">
       <form #f="ngForm" (ngSubmit)="updatePerson(f.value)">
@@ -61,16 +57,14 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div style="padding:15px;">
-      <div *ngIf="person">
-        <div class="card" style="width: 15rem;">
-          <img class="card-img-top" [src]="person.avatar" alt="Card image cap" style="height:150px;">
-          <div class="card-body">
-            <h5 (click)="editPerson(person)" class="card-title truncate">{{person.name}}</h5>
-            <h6 class="card-text">{{person.dob | age}}</h6>
-            <p class="card-text truncate">{{person.email}}</p>
-            <!-- <p class="card-text truncate">{{person.country}}</p> -->
-          </div>
+    <div *ngIf="person">
+      <div class="card" style="width: 15rem;">
+        <img class="card-img-top" [src]="person.avatar" alt="Card image cap" style="height:150px;">
+        <div class="card-body">
+          <h5 (click)="editPerson(person)" class="card-title truncate">{{person.name}}</h5>
+          <h6 class="card-text">{{person.dob | age}}</h6>
+          <p class="card-text truncate">{{person.email}}</p>
+          <!-- <p class="card-text truncate">{{person.country}}</p> -->
         </div>
       </div>
     </div>

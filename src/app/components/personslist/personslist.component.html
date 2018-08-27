@@ -1,15 +1,11 @@
-<br>
-<br>
-<br>
-<br>
-<div class="col">
+<div class="col" style="padding-top:100px;">
   <div class="row">
     <div *ngFor="let person of personsList; let i=index">
       <div style="padding:15px;">
         <div class="card" style="width: 15rem;">
           <img class="card-img-top" [src]="person.avatar" alt="Card image cap" style="height:150px;">
           <div class="card-body">
-            <h5 (click)="editPerson(person)" class="card-title truncate" style="cursor: pointer;" data-toggle="tooltip" data-placement="right" title="Edit Person">{{person.name}}</h5>
+            <h5 (click)="editPerson(person)" class="card-title truncate" style="cursor: pointer; color: royalblue" data-toggle="tooltip" data-placement="right" title="Edit Person">{{person.name}}</h5>
             <h6 class="card-text">{{person.dob | age}}</h6>
             <p class="card-text truncate">{{person.email}}</p>
             <!-- <p class="card-text truncate">{{person.country}}</p> -->
