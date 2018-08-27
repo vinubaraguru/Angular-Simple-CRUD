@@ -1,0 +1,66 @@
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <div class="card" style="padding:20px;">
+      <form #f="ngForm" (ngSubmit)="createPerson(f.value)">
+        <div class="form-group">
+          <label for="title">Name</label>
+          <span style="color:red;"> * </span>
+          <input #name="ngModel" ngModel name="name" id="name" type="text" class="form-control" required>
+          <div *ngIf="name.touched && name.invalid" class="red-text">
+            Name is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title">Email</label>
+          <span style="color:red;"> * </span>
+          <input type="text" id="email" name="email" ngModel #email="ngModel" class="form-control" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            required>
+          <div class="red-text" *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors.required">Email id is required</div>
+            <div *ngIf="email.errors.pattern">Invalid email address</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="title">Date of Birth</label>
+          <span style="color:red;"> * </span>
+          <input type="date" id="dob" name="dob" ngModel #dob="ngModel" class="form-control" required>
+          <div class="red-text" *ngIf="dob.touched && !dob.valid">
+            <div *ngIf="dob.errors.required">DOB is required</div>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="country">Country</label>
+          <span style="color:red;"> * </span>
+          <select #country="ngModel" ngModel name="country" id="country" class="form-control" required>
+            <option *ngFor="let c of countryList" value="c.code">
+              {{c.name}}
+            </option>
+          </select>
+          <div *ngIf="country.touched && country.invalid" class="red-text">
+            country is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="avatarUrl">Avatar</label>
+          <span style="color:red;"> * </span>
+          <input #avatarUrl="ngModel" ngModel name="avatarUrl" id="avatarUrl" type="text" class="form-control" required>
+          <div *ngIf="avatarUrl.touched && avatarUrl.invalid" class="red-text">
+            Avatar is required
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <button  class="btn btn-success" [disabled]='!f.valid'>Create Person</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
