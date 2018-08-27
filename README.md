@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
+# Running the Application:
+
+1. Install Node.js and npm if they are not already on your machine.
+2. Install the Angular CLI globally using 'npm install -g @angular/cli'
+3. Run 'git clone https://github.com/vinubaraguru/TekdiAngularTest.git' to clone the project
+4. Run 'cd TekdiAngularTest' to change the project directory
+5. Run 'npm install' to install app dependencies
+6. Run 'ng serve' to build the TypeScript, watch for changes and launch the web server
+7. Go to http://localhost:4200 in your browser
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
